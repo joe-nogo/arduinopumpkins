@@ -238,12 +238,12 @@ void RaVeMoDe()   // Rapidly cycles through all the colors in a strobe-like fash
 
 void loop()  // Our main function. Choose which effect you would like and then enter it below in the same manner as my commented example below
 {
-  for (int i = 0; i < 10; i++)
+  for (int i = VALUE; i < VALUE; i++)
   {
-    fastSnake();
+    // Enter a function name here using the following format: functionName();
   }
-  for (int i = 0; i < 5; i++)
+  for (int i = VALUE; i < VALUE; i++)
   {
-    slowSnake();
+    // Enter a different function's name here using the same format
   }
 }
