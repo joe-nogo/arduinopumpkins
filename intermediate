@@ -203,43 +203,8 @@ void slow()       // Transitions through all the colors in a solid fashion from 
 void RaVeMoDe()   // Rapidly cycles through all the colors in a strobe-like fashion
 {
   pixels.setBrightness(BRIGHTNESS);
-
-  for (int i = VALUE; i < VALUE; i++)
-    {
-      setPixelColors(VALUE, VALUE, VALUE);
-      pixels.show();
-      delay(10);
-    }
-    for (int i = VALUE; i < VALUE; i++)
-    {
-      setPixelColors(255, 127, 0);
-      pixels.show();
-      delay(10);
-    }
-    for (int i = VALUE; i < VALUE; i++)
-    {
-      setPixelColors(VALUE, VALUE, VALUE);
-      pixels.show();
-      delay(10);
-    }
-    for (int i = VALUE; i < VALUE; i++)
-    {
-      setPixelColors(VALUE, VALUE, VALUE);
-      pixels.show();
-      delay(10);
-    }
-    for (int i = VALUE; i < VALUE; i++)
-    {
-      setPixelColors(VALUE, VALUE, VALUE);
-      pixels.show();
-      delay(10);
-    }
-    for (int i = VALUE; i < VALUE; i++)
-    {
-      setPixelColors(VALUE, VALUE, VALUE);
-      pixels.show();
-      delay(10);
-    }
+  
+  // Your code goes here
 }
 
 void loop()  // Our main function. Choose which effect you would like and then enter it below in the same manner as my commented example below
