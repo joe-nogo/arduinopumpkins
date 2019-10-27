@@ -50,27 +50,25 @@ void setPixelColors(float r, float g, float b)    // This is a helper function w
 void blueAndGreenYayBreath()    // Give the effect of breathing between two colors (I chose green and blue). Colors can be easily changed by looking up the rgb values for different colors.
 {                               // Ask me for assistance if needed! I'm happy to help :)
   pixels.setBrightness(BRIGHTNESS);
-  while (1)
-  {
-    for (int i = 1; i < NUMPIXELS; i = i + 2) {
-      pixels.setPixelColor(i, pixels.Color(0, 255, 0));
-      pixels.show();
+
+  for (int i = 1; i < NUMPIXELS; i = i + 2) {
+    pixels.setPixelColor(i, pixels.Color(0, 255, 0));
+    pixels.show();
+  }
+  //Even pixels breath
+  for (int rB = 150; rB < 255; rB++) {
+    for (int i = 0; i < NUMPIXELS; i = i + 2) {
+      pixels.setPixelColor(i, pixels.Color(0, rB, rB - 120));
     }
-    //Even pixels breath
-    for (int rB = 150; rB < 255; rB++) {
-      for (int i = 0; i < NUMPIXELS; i = i + 2) {
-        pixels.setPixelColor(i, pixels.Color(0, rB, rB - 120));
-      }
-      pixels.show();
-      delay(20);
+    pixels.show();
+    delay(20);
+  }
+  for (int rB = 255; rB > 150; rB--) {
+    for (int i = 0; i < NUMPIXELS; i = i + 2) {
+      pixels.setPixelColor(i, pixels.Color(0, rB, rB - 120));
     }
-    for (int rB = 255; rB > 150; rB--) {
-      for (int i = 0; i < NUMPIXELS; i = i + 2) {
-        pixels.setPixelColor(i, pixels.Color(0, rB, rB - 120));
-      }
-      pixels.show();
-      delay(20);
-    }
+    pixels.show();
+    delay(20);
   }
 }
 
@@ -96,43 +94,41 @@ void slowSnake()      // Creates a snake effect of all the colors rotating givin
     pixels.show();
     delay(75);
   }
+
 }
 
 void woopWoopthePolice()      // Simulates a police siren
 {
   pixels.setBrightness(BRIGHTNESS);
-  while (1)
+
+  //Police effect
+  for (int i = NUMPIXELS - 1; i >= 0; i--)
   {
-    //Police effect
-    for (int i = NUMPIXELS - 1; i >= 0; i--)
-    {
-      pixels.setPixelColor(i, pixels.Color(255, 0, 0));
-      pixels.setPixelColor((i + 1) % NUMPIXELS, pixels.Color(255, 0, 0));
-      pixels.setPixelColor((i + 2) % NUMPIXELS, pixels.Color(255, 0, 0));
-      pixels.setPixelColor((i + 3) % NUMPIXELS, pixels.Color(255, 0, 0));
-      pixels.setPixelColor((i + 4) % NUMPIXELS, pixels.Color(255, 0, 0));
-      pixels.setPixelColor((i + 5) % NUMPIXELS, pixels.Color(255, 0, 0));
-      pixels.setPixelColor((i + 6) % NUMPIXELS, pixels.Color(0, 0, 255));
-      pixels.setPixelColor((i + 7) % NUMPIXELS, pixels.Color(0, 0, 255));
-      pixels.setPixelColor((i + 8) % NUMPIXELS, pixels.Color(0, 0, 255));
-      pixels.setPixelColor((i + 9) % NUMPIXELS, pixels.Color(0, 0, 255));
-      pixels.setPixelColor((i + 10) % NUMPIXELS, pixels.Color(0, 0, 255));
-      pixels.setPixelColor((i + 11) % NUMPIXELS, pixels.Color(0, 0, 255));
-      pixels.show();
-      delay(50);
-    }
+    pixels.setPixelColor(i, pixels.Color(255, 0, 0));
+    pixels.setPixelColor((i + 1) % NUMPIXELS, pixels.Color(255, 0, 0));
+    pixels.setPixelColor((i + 2) % NUMPIXELS, pixels.Color(255, 0, 0));
+    pixels.setPixelColor((i + 3) % NUMPIXELS, pixels.Color(255, 0, 0));
+    pixels.setPixelColor((i + 4) % NUMPIXELS, pixels.Color(255, 0, 0));
+    pixels.setPixelColor((i + 5) % NUMPIXELS, pixels.Color(255, 0, 0));
+    pixels.setPixelColor((i + 6) % NUMPIXELS, pixels.Color(0, 0, 255));
+    pixels.setPixelColor((i + 7) % NUMPIXELS, pixels.Color(0, 0, 255));
+    pixels.setPixelColor((i + 8) % NUMPIXELS, pixels.Color(0, 0, 255));
+    pixels.setPixelColor((i + 9) % NUMPIXELS, pixels.Color(0, 0, 255));
+    pixels.setPixelColor((i + 10) % NUMPIXELS, pixels.Color(0, 0, 255));
+    pixels.setPixelColor((i + 11) % NUMPIXELS, pixels.Color(0, 0, 255));
+    pixels.show();
+    delay(50);
   }
 }
 
 void fastSnake()              // Creates a snake effect of all the colors rotating giving the illusion of a snake running around the LED ring fast
 {
   pixels.setBrightness(BRIGHTNESS);
-  while (1)
+  
+  //Snake effect
+  for (int i = NUMPIXELS - 1; i >= 0; i--)
   {
-    //Snake effect
-    for (int i = NUMPIXELS - 1; i >= 0; i--)
-    {
-      pixels.setPixelColor(i, pixels.Color(colarray[0], colarray[1], colarray[2]));
+    pixels.setPixelColor(i, pixels.Color(colarray[0], colarray[1], colarray[2]));
     pixels.setPixelColor((i + 1) % NUMPIXELS, pixels.Color(colarray[3], colarray[4], colarray[5]));
     pixels.setPixelColor((i + 2) % NUMPIXELS, pixels.Color(colarray[6], colarray[7], colarray[8]));
     pixels.setPixelColor((i + 3) % NUMPIXELS, pixels.Color(colarray[9], colarray[10], colarray[11]));
@@ -146,36 +142,33 @@ void fastSnake()              // Creates a snake effect of all the colors rotati
     pixels.setPixelColor((i + 11) % NUMPIXELS, pixels.Color(colarray[33], colarray[34], colarray[35]));
     pixels.show();
     delay(40);
-    }
   }
 }
 
 void fast()   // Transitions through all the colors in a solid fashion from red to purple fast
 {
   pixels.setBrightness(BRIGHTNESS);
-  while (1)
+
+  //Fast transition
+  for (int i = 0; i < 255; i = i + 4)
   {
-    //Fast transition
-    for (int i = 0; i < 255; i = i + 4)
-    {
-      setPixelColors(255, i, 0);
-      pixels.show();
-    }
-    for (int i = 0; i < 255; i = i + 4)
-    {
-      setPixelColors(255 - i, 255, 0);
-      pixels.show();
-    }
-    for (int i = 0; i < 255; i = i + 4)
-    {
-      setPixelColors(0, 255 - i, i);
-      pixels.show();
-    }
-    for (int i = 0; i < 255; i = i + 4)
-    {
-      setPixelColors(i, 0, 255 - i);
-      pixels.show();
-    }
+    setPixelColors(255, i, 0);
+    pixels.show();
+  }
+  for (int i = 0; i < 255; i = i + 4)
+  {
+    setPixelColors(255 - i, 255, 0);
+    pixels.show();
+  }
+  for (int i = 0; i < 255; i = i + 4)
+  {
+    setPixelColors(0, 255 - i, i);
+    pixels.show();
+  }
+  for (int i = 0; i < 255; i = i + 4)
+  {
+    setPixelColors(i, 0, 255 - i);
+    pixels.show();
   }
 }
 
@@ -183,38 +176,35 @@ void fast()   // Transitions through all the colors in a solid fashion from red 
 void slow()       // Transitions through all the colors in a solid fashion from red to purple slow
 {
   pixels.setBrightness(BRIGHTNESS);
-  while (1)
+  
+  //Slow transition
+  for (float i = 0; i != 255; i = i + 0.01)
   {
-    //Slow transition
-    for (float i = 0; i != 255; i = i + 0.01)
-    {
-      setPixelColors(255, i, 0);
-      pixels.show();
-    }
-    for (float i = 0; i != 255; i = i + 0.01)
-    {
-      setPixelColors(255 - i, 255, 0);
-      pixels.show();
-    }
-    for (float i = 0; i != 255; i = i + 0.01)
-    {
-      setPixelColors(0, 255 - i, i);
-      pixels.show();
-    }
-    for (float i = 0; i != 255; i = i + 0.01)
-    {
-      setPixelColors(i, 0, 255 - i);
-      pixels.show();
-    }
+    setPixelColors(255, i, 0);
+    pixels.show();
+  }
+  for (float i = 0; i != 255; i = i + 0.01)
+  {
+    setPixelColors(255 - i, 255, 0);
+    pixels.show();
+  }
+  for (float i = 0; i != 255; i = i + 0.01)
+  {
+    setPixelColors(0, 255 - i, i);
+    pixels.show();
+  }
+  for (float i = 0; i != 255; i = i + 0.01)
+  {
+    setPixelColors(i, 0, 255 - i);
+    pixels.show();
   }
 }
 
 void RaVeMoDe()   // Rapidly cycles through all the colors in a strobe-like fashion
 {
   pixels.setBrightness(BRIGHTNESS);
-  while (1)
-  {
-    for (int i = 0; i < NUMPIXELS; i++)
+
+  for (int i = 0; i < NUMPIXELS; i++)
     {
       setPixelColors(255, 0, 0);
       pixels.show();
@@ -250,17 +240,16 @@ void RaVeMoDe()   // Rapidly cycles through all the colors in a strobe-like fash
       pixels.show();
     }
     //delay(4);
-  }
 }
 
 void loop()  // Our main function. Choose which effect you would like and then enter it below in the same manner as my commented example below
 {
-  for (int i = VALUE; i > VALUE; i++)
+  for (int i = VALUE; i < VALUE; i++)
   {
-    // Insert a function name here
+    // Enter a function name here using the following form: functionName();
   }
-  for (int i = VALUE; i > VALUE; i++)
+  for (int i = VALUE; i < VALUE; i++)
   {
-    // Insert a different function name here
+    // Enter a different function name here
   }
 }
