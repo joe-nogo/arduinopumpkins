@@ -209,47 +209,41 @@ void RaVeMoDe()   // Rapidly cycles through all the colors in a strobe-like fash
       setPixelColors(255, 0, 0);
       pixels.show();
     }
-    //delay(1);
     for (int i = 0; i < NUMPIXELS; i++)
     {
       setPixelColors(255, 127, 0);
       pixels.show();
     }
-    //delay(1);
     for (int i = 0; i < NUMPIXELS; i++)
     {
       setPixelColors(255, 255, 0);
       pixels.show();
     }
-    //delay(1);
     for (int i = 0; i < NUMPIXELS; i++)
     {
       setPixelColors(0, 255, 0);
       pixels.show();
     }
-    //delay(1);
     for (int i = 0; i < NUMPIXELS; i++)
     {
       setPixelColors(0, 0, 255);
       pixels.show();
     }
-    //delay(1);
     for (int i = 0; i < NUMPIXELS; i++)
     {
       setPixelColors(148, 0, 211);
       pixels.show();
     }
-    //delay(4);
 }
 
 void loop()  // Our main function. Choose which effect you would like and then enter it below in the same manner as my commented example below
 {
-  for (int i = VALUE; i < VALUE; i++)
+  for (int i = 0; i < 10; i++)
   {
-    // Enter a function name here using the following form: functionName();
+    fastSnake();
   }
-  for (int i = VALUE; i < VALUE; i++)
+  for (int i = 0; i < 5; i++)
   {
-    // Enter a different function name here
+    slowSnake();
   }
 }
