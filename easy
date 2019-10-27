@@ -96,7 +96,6 @@ void slowSnake()      // Creates a snake effect of all the colors rotating givin
     pixels.show();
     delay(75);
   }
-
 }
 
 void woopWoopthePolice()      // Simulates a police siren
@@ -260,7 +259,7 @@ void loop()  // Our main function. Choose which effect you would like and then e
   {
     // Insert a function name here
   }
-  for (int i = VALUE; i > VALUE; i+)
+  for (int i = VALUE; i > VALUE; i++)
   {
     // Insert a different function name here
   }
