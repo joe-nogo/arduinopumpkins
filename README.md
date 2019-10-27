@@ -1,6 +1,6 @@
 Easy:
 
-This is the complete code. To begin with, copy and paste this code into your new sketch on the Arduino IDE. Next, look at line 257. This is our loop function which will repeat continuously until the end of times. Inside this function, I have an incomplete for loop. Try entering numbers in for VALUE to create an alternating lighting effect for different durations of time. Here is the general form of the for statement:
+This is the complete code. To begin with, copy and paste this code into your new sketch on the Arduino IDE. Next, look at line 239. This is our loop function which will repeat continuously until the end of times. Inside this function, I have an incomplete for loop. Try entering numbers in for VALUE to create an alternating lighting effect for different durations of time. Here is the general form of the for statement:
 
 for (initialization; condition; iteration) 
 {
